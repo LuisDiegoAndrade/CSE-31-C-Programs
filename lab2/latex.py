@@ -48,10 +48,10 @@ def latex():
         doc.append(Math(data=['\linebreak'], escape=False))
 
 
+    #print(doc.dumps())
 
-
-    #doc.generate_pdf(clean_tex=False)
-    print(doc.dumps())
+    with open('lab2.tex','w') as f:
+        f.write(doc.dumps())
 
 
 
