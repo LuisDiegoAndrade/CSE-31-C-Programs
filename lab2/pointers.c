@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+//comment out if not using emscripten compiler
+//Additionaly, also comment out "EMSCRIPTEN_KEEPALIVE" if not compiling to wasm
+#include <emscripten/emscripten.h>
 
-
+EMSCRIPTEN_KEEPALIVE
 int main() {
 
   int x,y, *px, *py = 0;

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+       crossorigin="anonymous">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+    <style media="screen">
+     input {
+border: none;
+display: inline;
+font-family: inherit;
+font-size: inherit;
+padding: none;
+width: auto;
+
+}
+    </style>
+    <title> </title>
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-light bg-steel fixed-top">
+        <div class="container">
+          <!--<img class="navbar-brand mr-4" src="./static/goFloLogo.png">--><h1>🕹</h1>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <!-- Navbar Left Side -->
+            <div class="navbar-nav mr-auto">
+
+              <!--<a class="nav-item nav-link" href="/dashboard">Dashboard</a>
+              <a class="nav-item nav-link" href="/dashboard">Explore</a>-->
+
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="https://github.com/LuisDiegoAndrade/CSE-31-C-Programs" target="_blank">
+
+                <i style="font-size:40px" class="fab fa-github-square"></i>
+              </a>
+              <a class="nav-item nav-link" href="#"><i style="font-size:40px" class="fas fa-terminal"></i></a>
+              <!--<a class="nav-item nav-link" href="/signup">Signup</a>-->
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container">
+      <div style="" class="window">
+  <div class="titlebar">
+    <div class="buttons">
+      <div class="close">
+
+        <!-- close button link -->
+      </div>
+      <div class="minimize">
+
+        <!-- minimize button link -->
+      </div>
+      <div class="zoom">
+
+        <!-- zoom button link -->
+      </div>
+    </div>
+    📁 lab2--WAsh
+    <!-- window title -->
+  </div>
+  <div class="content">
+
+    <!--<div><span> Luiss:lab2 luisdiegosmac$ <span class="bashcmd"></span> </span></div>-->
+
+
+    <!-- window content -->
+  </div>
+  <form style="margin-left:10px; margin-right:10px;">~$ <input id="cmd" type="text" name="cmd" value=""></form>
+</div>
+      <div class="row">
+        <!--<div class="col-md-8">
+
+          <div style="text-align: left" class="content-section">
+
+          </div>
+
+        </div> -->
+
+        <div class="col-md-6">
+          <div style="text-align: left" class="content-section">
+            <br>
+            <!--<h3>C source</h3>-->
+
+            <!--<p class='text-muted'>Run
+              <ul class="list-group">
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+              </ul>
+            </p>-->
+
+            <pre><code class="prettyprint">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+//comment out if not using emscripten compiler
+//Additionaly, also comment out "EMSCRIPTEN_KEEPALIVE" if not compiling to wasm
+#include &lt;emscripten/emscripten.h&gt;
+
+EMSCRIPTEN_KEEPALIVE
+int* Int_Array(int size) {
+  int* a = (int*)malloc(sizeof(int)*size);
+  return a;
+}
+
+EMSCRIPTEN_KEEPALIVE
+int Int_Get(int* array, int index) {
+  return *(array+index);
+}
+
+EMSCRIPTEN_KEEPALIVE
+void Int_Set(int* array, int index, int value) {
+  *(array+index) = value;
+}
+
+
+EMSCRIPTEN_KEEPALIVE
+int are_they_equal() {
+  int coolArr[10] = {1,2,3,4,5,6,7,8,9,10};
+  int* arr = &coolArr[0];
+
+  if (&coolArr[0]-arr == 0) {
+    return (1);
+  }
+  return (0);
+}
+
+
+
+
+            </code></pre>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="text-align: left" class="content-section">
+            <br>
+            <!--<h3>C source</h3>-->
+
+            <!--<p class='text-muted'>Run
+              <ul class="list-group">
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+              </ul>
+            </p>-->
+
+            <pre><code contenteditable="true" class="prettyprint">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+
+  int x,y, *px, *py = 0;
+  int* arr;
+  int *arrayMalloc;
+
+  int array [10] = {1,2,3,4,5,6,7,8,9,10};
+  arr = &array[0];
+
+  arrayMalloc = (int *)malloc(sizeof(int) * 10);
+
+  int j;
+  for (j = 0; j < 10; j++) {
+    *(arr+j) = j+1;
+  }
+
+  px = &x;
+  py = &y;
+
+  printf("\%p \%p \%p \%p \n", &x, &y, px, py);
+
+  int i;
+  for(i = 0; i < 10; ++i){
+    printf("%d\n", *(arr+i));
+  }
+  printf("%p %p\n", arr, &arr[0]);
+  //printf("%d %d \n",px,py);
+  //printf("\%p \%p", &x, &y);
+
+
+return 0;
+}
+
+
+
+            </code></pre>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="text-align: left" class="content-section">
+            <br>
+            <!--<h3>C source</h3>-->
+
+            <!--<p class='text-muted'>Run
+              <ul class="list-group">
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+              </ul>
+            </p>-->
+
+            <pre><code contenteditable="true" class="prettyprint">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+
+  int x,y, *px, *py = 0;
+  int* arr;
+  int *arrayMalloc;
+
+  int array [10] = {1,2,3,4,5,6,7,8,9,10};
+  arr = &array[0];
+
+  arrayMalloc = (int *)malloc(sizeof(int) * 10);
+
+  int j;
+  for (j = 0; j < 10; j++) {
+    *(arr+j) = j+1;
+  }
+
+  px = &x;
+  py = &y;
+
+  printf("\%p \%p \%p \%p \n", &x, &y, px, py);
+
+  int i;
+  for(i = 0; i < 10; ++i){
+    printf("%d\n", *(arr+i));
+  }
+  printf("%p %p\n", arr, &arr[0]);
+  //printf("%d %d \n",px,py);
+  //printf("\%p \%p", &x, &y);
+
+
+return 0;
+}
+
+
+
+            </code></pre>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="text-align: left" class="content-section">
+            <br>
+            <!--<h3>C source</h3>-->
+
+            <!--<p class='text-muted'>Run
+              <ul class="list-group">
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+              </ul>
+            </p>-->
+
+            <pre><code contenteditable="true" class="prettyprint">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+
+  int x,y, *px, *py = 0;
+  int* arr;
+  int *arrayMalloc;
+
+  int array [10] = {1,2,3,4,5,6,7,8,9,10};
+  arr = &array[0];
+
+  arrayMalloc = (int *)malloc(sizeof(int) * 10);
+
+  int j;
+  for (j = 0; j < 10; j++) {
+    *(arr+j) = j+1;
+  }
+
+  px = &x;
+  py = &y;
+
+  printf("\%p \%p \%p \%p \n", &x, &y, px, py);
+
+  int i;
+  for(i = 0; i < 10; ++i){
+    printf("%d\n", *(arr+i));
+  }
+  printf("%p %p\n", arr, &arr[0]);
+  //printf("%d %d \n",px,py);
+  //printf("\%p \%p", &x, &y);
+
+
+return 0;
+}
+
+
+
+            </code></pre>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="text-align: left" class="content-section">
+            <br>
+            <!--<h3>C source</h3>-->
+
+            <!--<p class='text-muted'>Run
+              <ul class="list-group">
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+              </ul>
+            </p>-->
+
+            <pre><code contenteditable="true" class="prettyprint">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+
+  int x,y, *px, *py = 0;
+  int* arr;
+  int *arrayMalloc;
+
+  int array [10] = {1,2,3,4,5,6,7,8,9,10};
+  arr = &array[0];
+
+  arrayMalloc = (int *)malloc(sizeof(int) * 10);
+
+  int j;
+  for (j = 0; j < 10; j++) {
+    *(arr+j) = j+1;
+  }
+
+  px = &x;
+  py = &y;
+
+  printf("\%p \%p \%p \%p \n", &x, &y, px, py);
+
+  int i;
+  for(i = 0; i < 10; ++i){
+    printf("%d\n", *(arr+i));
+  }
+  printf("%p %p\n", arr, &arr[0]);
+  //printf("%d %d \n",px,py);
+  //printf("\%p \%p", &x, &y);
+
+
+return 0;
+}
+
+
+
+            </code></pre>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="text-align: left" class="content-section">
+            <br>
+            <!--<h3>C source</h3>-->
+
+            <!--<p class='text-muted'>Run
+              <ul class="list-group">
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+                <li style="margin: 0px 0px 5px 0px" class="btn btn-outline-info">Lab 1</li>
+              </ul>
+            </p>-->
+
+            <pre><code contenteditable="true" class="prettyprint">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+
+  int x,y, *px, *py = 0;
+  int* arr;
+  int *arrayMalloc;
+
+  int array [10] = {1,2,3,4,5,6,7,8,9,10};
+  arr = &array[0];
+
+  arrayMalloc = (int *)malloc(sizeof(int) * 10);
+
+  int j;
+  for (j = 0; j < 10; j++) {
+    *(arr+j) = j+1;
+  }
+
+  px = &x;
+  py = &y;
+
+  printf("\%p \%p \%p \%p \n", &x, &y, px, py);
+
+  int i;
+  for(i = 0; i < 10; ++i){
+    printf("%d\n", *(arr+i));
+  }
+  printf("%p %p\n", arr, &arr[0]);
+  //printf("%d %d \n",px,py);
+  //printf("\%p \%p", &x, &y);
+
+
+return 0;
+}
+
+
+
+            </code></pre>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!--Load glue code for interfacing with wasm modules-->
+    <script src={{ url_for("static", filename="wasm_pointers.js") }}></script>
+    <script type="text/javascript">
+      Module['onRuntimeInitialized'] = () => {
+
+
+        function wasm_pointers() {
+          let stdout = '';
+
+          let iarray = Module.ccall('Int_Array', 'number', ['number'], [100]);
+
+          for (let i = 0; i < 100; ++i) {
+              Module.ccall('Int_Set', '', ['number','number', 'number'], [iarray,i,i]);
+          }
+
+          for (let j = 0; j < 100; ++j) {
+              stdout += Module.ccall('Int_Get', 'number', ['number','number'], [iarray,j]) + "\n";
+          }
+
+          stdout += "int coolArr[10] = {1,2,3,4,5,6,7,8,9,10}; int* arr = &coolArr[0]; \n";
+          if (Module.ccall('are_they_equal', 'number', [], []) == 1){
+            stdout += "&coolArr[10] - arr == 0";
+          }
+          else {stdout += "&coolArr[10] - arr != 0";}
+
+
+          return stdout;
+        }
+
+        let f = document.querySelector('form');
+        let content = document.querySelector('.content');
+        let p;
+        f.addEventListener('submit', (e) => {
+          let data = new FormData(f);
+          e.preventDefault();
+          document.getElementById('cmd').value='';
+
+
+          console.log(data.get('cmd'));
+          let content = document.querySelector('.content');
+          /*
+          let p = document.createElement('p');
+          p.textContent = '~$ ' + data.get('cmd');
+          content.appendChild(p); */
+
+          switch (data.get('cmd')) {
+            case 'ls':
+              p = document.createElement('div');
+              p.textContent = '~$ ' + data.get('cmd');
+              content.appendChild(p)
+              p = document.createElement('div');
+              p.textContent = 'Lab_1 Lab_2';
+              content.appendChild(p);
+
+              break;
+
+              case 'pwd':
+                p = document.createElement('div');
+                p.textContent = '~$ ' + data.get('cmd');
+                content.appendChild(p)
+                p = document.createElement('div');
+                p.textContent = '/YOMMAMA/BOOTY';
+                content.appendChild(p);
+                break;
+
+                case './wasm_pointers':
+                  p = document.createElement('div');
+                  p.textContent = '~$ ' + data.get('cmd');
+                  content.appendChild(p)
+                  p = document.createElement('pre');
+                  p.style.color = 'white';
+                  p.textContent = wasm_pointers();
+                  content.appendChild(p);
+                  break;
+
+                  case 'ls':
+                    p = document.createElement('div');
+                    p.textContent = '~$ ' + data.get('cmd');
+                    content.appendChild(p)
+                    p = document.createElement('div');
+                    p.textContent = 'Lab_1       Lab_2';
+                    content.appendChild(p);
+                    break;
+
+                    case 'clear':
+                      content.textContent = '';
+                      break;
+
+
+            default:
+              p = document.createElement('div');
+              p.textContent = '~$ ' + data.get('cmd');
+              content.appendChild(p)
+              p = document.createElement('div');
+              p.textContent = '-trash: ' + data.get('cmd') + ': command not found' ;
+              content.appendChild(p)
+          }
+
+
+
+        });
+
+
+
+
+      };
+    </script>
+
+    <!--<script>
+
+      let f = document.querySelector('form');
+      let content = document.querySelector('.content');
+      let p;
+      f.addEventListener('submit', (e) => {
+        let data = new FormData(f);
+        e.preventDefault();
+        document.getElementById('cmd').value='';
+
+
+        console.log(data.get('cmd'));
+        let content = document.querySelector('.content');
+        /*
+        let p = document.createElement('p');
+        p.textContent = '~$ ' + data.get('cmd');
+        content.appendChild(p); */
+
+        switch (data.get('cmd')) {
+          case 'ls':
+            p = document.createElement('div');
+            p.textContent = '~$ ' + data.get('cmd');
+            content.appendChild(p)
+            p = document.createElement('div');
+            p.textContent = 'Lab_1 Lab_2';
+            content.appendChild(p);
+
+            break;
+
+            case 'pwd':
+              p = document.createElement('div');
+              p.textContent = '~$ ' + data.get('cmd');
+              content.appendChild(p)
+              p = document.createElement('div');
+              p.textContent = '/YOMMAMA/BOOTY';
+              content.appendChild(p);
+              break;
+
+              case './pointers':
+                p = document.createElement('div');
+                p.textContent = '~$ ' + data.get('cmd');
+                content.appendChild(p)
+                p = document.createElement('div');
+                p.textContent = '0x00a8 0x00a12';
+                content.appendChild(p);
+                break;
+
+                case 'ls':
+                  p = document.createElement('div');
+                  p.textContent = '~$ ' + data.get('cmd');
+                  content.appendChild(p)
+                  p = document.createElement('div');
+                  p.textContent = 'Lab_1       Lab_2';
+                  content.appendChild(p);
+                  break;
+
+                  case 'clear':
+                    content.textContent = '';
+                    break;
+
+
+          default:
+            p = document.createElement('div');
+            p.textContent = '~$ ' + data.get('cmd');
+            content.appendChild(p)
+            p = document.createElement('div');
+            p.textContent = '-trash: ' + data.get('cmd') + ': command not found' ;
+            content.appendChild(p)
+        }
+
+
+
+      });
+
+    </script>-->
+
+</body>
+</html>
