@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <malloc.h>
+
 
  int main() {
 	int num;
@@ -14,8 +14,10 @@
 	handle = (int **)malloc(1 * sizeof(int *));
 	*handle = ptr;
 
-	// Insert extra code here
+  printf("num address: %p\n", &num);
+  printf("ptr address: %p\n", ptr);
+  printf("handle address: %p\n", handle);
+
 
 	return 0;
-} 
-
+}
